@@ -3,7 +3,7 @@ FROM golang:1.17 as builder
 
 # build k6 0.36.0 with prometheus support
 ENV K6_VERSION=v0.36.0
-RUN go install go.k6.io/xk6/cmd/xk6@v0.6.1 && xk6 build --with github.com/grafana/xk6-output-prometheus-remote@latest
+RUN go install go.k6.io/xk6/cmd/xk6@v0.6.1 && xk6 build --with github.com/jegger/xk6-nats@cred-file-auth
 
 WORKDIR /build
 
